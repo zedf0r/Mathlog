@@ -14,6 +14,7 @@ export class Character {
     this.health = 100;
     this.level = 1;
     this._attack = 100;
+    this.durman = false;
   }
 }
 
@@ -23,20 +24,24 @@ export class MathOperation extends Character {
   }
 
   set attack(distance) {
-    this._attack = 100 - 10 * (distance - 1);
+    if (this.durman) {
+      this._attack = ((100 - 10 * (distance - 1)) - Math.log2(distance) * 5).toFixed(2);
+    } else {
+      this._attack = 100 - 10 * (distance - 1);
+    }
+    
   }
 
   get attack() {
     return this._attack;
   }
 
-  set stoned(distance) {
-    this.attack = distance;
-    this._attack = (this._attack - Math.log2(distance) * 5).toFixed(2)
+  set stoned(durman) {
+    this.durman = durman;
   }
 
   get stoned() {
-    return this._attack;
+    return this.durman;
   }
 }
 

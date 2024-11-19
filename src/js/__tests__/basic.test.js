@@ -22,13 +22,15 @@ test ('testing attack Daemon', () => {
 
 test ('testing durman attack Magician', () => {
   const magician = new Magician('Daef', 'Magician');
-  magician.stoned = 2;
-  expect(magician.stoned).toBe("85.00");
+  magician.stoned = true;
+  magician.attack = 2;
+  expect(magician.attack).toBe("85.00");
 })
 
 test ('testing durman attack Daemon', () => {
   const magician = new Magician('Lucifer', 'Daemon');
-  magician.stoned = 3;
-  expect(magician.stoned).toBe("72.08");
+  magician.stoned = true;
+  magician.attack = 3;
+  expect(magician.attack).toBe("72.08");
 })
 
