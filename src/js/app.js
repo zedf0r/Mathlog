@@ -24,15 +24,15 @@ export class MathOperation extends Character {
   }
 
   set attack(distance) {
-    if (this.durman) {
-      this._attack = ((100 - 10 * (distance - 1)) - Math.log2(distance) * 5).toFixed(2);
-    } else {
-      this._attack = 100 - 10 * (distance - 1);
-    }
-    
+    this.distance = distance;
   }
 
   get attack() {
+    if (this.durman) {
+      this._attack = ((100 - 10 * (this.distance - 1)) - Math.log2(this.distance) * 5).toFixed(2);
+    } else {
+      this._attack = 100 - 10 * (this.distance - 1);
+    }
     return this._attack;
   }
 
