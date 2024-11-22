@@ -1,5 +1,5 @@
 export class Character {
-  constructor(name, type) {
+  constructor(name, type, distance) {
     if (typeof name !== "string" || name.length < 2 || name.length > 10) {
       throw new Error("Неправильный ввод имени");
     }
@@ -15,16 +15,13 @@ export class Character {
     this.level = 1;
     this._attack = 100;
     this.durman = false;
+    this.distance = distance;
   }
 }
 
 export class MathOperation extends Character {
   constructor(name, type, _attack) {
     super(name, type, _attack);
-  }
-
-  set attack(distance) {
-    this.distance = distance;
   }
 
   get attack() {

@@ -9,28 +9,24 @@ test ('testing error type', () => {
 })
 
 test ('testing attack Magician', () => {
-  const magician = new Magician('Daef', 'Magician');
-  magician.attack = 5;
+  const magician = new Magician('Daef', 'Magician', 5);
   expect(magician.attack).toBe(60)
 })
 
 test ('testing attack Daemon', () => {
-  const daemon = new Daemon('Lucifer', 'Daemon');
-  daemon.attack = 3;
+  const daemon = new Daemon('Lucifer', 'Daemon', 3);
   expect(daemon.attack).toBe(80);
 })
 
 test ('testing durman attack Magician', () => {
-  const magician = new Magician('Daef', 'Magician');
+  const magician = new Magician('Daef', 'Magician', 2);
   magician.stoned = true;
-  magician.attack = 2;
   expect(magician.attack).toBe("85.00");
 })
 
 test ('testing durman attack Daemon', () => {
-  const magician = new Magician('Lucifer', 'Daemon');
+  const magician = new Magician('Lucifer', 'Daemon', 3);
   magician.stoned = true;
-  magician.attack = 3;
   expect(magician.attack).toBe("72.08");
 })
 
