@@ -13,7 +13,6 @@ export class Character {
     this.type = type;
     this.health = 100;
     this.level = 1;
-    this._attack = 100;
     this.durman = false;
     this.distance = distance;
   }
@@ -22,6 +21,10 @@ export class Character {
 export class MathOperation extends Character {
   constructor(name, type, _attack) {
     super(name, type, _attack);
+  }
+
+  set attack(attack) {
+    this._attack = attack;
   }
 
   get attack() {
